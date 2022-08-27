@@ -12,6 +12,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css"
+    />
+
+    <script
+      src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js"
+      defer
+    ></script>
   </head>
 
   <body>
@@ -29,13 +39,13 @@
             aria-expanded="false"
           >
             <img
-              class="icon-hamburger"
+              class="nav-icon icon-hamburger"
               src="images/icon-hamburger.svg"
               alt=""
-              aria-hidden="true"
+              aria-hidden="false"
             />
             <img
-              class="icon-close"
+              class="nav-icon icon-close"
               src="images/icon-close.svg"
               alt=""
               aria-hidden="true"
@@ -59,7 +69,7 @@
     </header>
 
     <main>
-      <section class="padding-block-900">
+      <section class="text-center-sm-only padding-block-900">
         <div class="container">
           <div class="even-columns">
             <div class="flow">
@@ -72,18 +82,18 @@
               </p>
               <button class="button">Get Started</button>
             </div>
-            <div>
-              <img src="images/illustration-intro.svg" alt="" />
+            <div class="image-blob">
+              <img class="mx-auto" src="images/illustration-intro.svg" alt="" />
             </div>
           </div>
         </div>
       </section>
 
-      <section class="padding-block-900">
+      <section class="sales-points | padding-block-900">
         <div class="container">
           <div class="even-columns">
             <div
-              class="flow text-center-sm-only margin-bottom-700"
+              class="sales-points__blob | flow text-center-sm-only margin-bottom-700"
               style="--flow-spacer: 1.5rem"
             >
               <h2 class="fs-secondary-heading fw-bold">
@@ -141,8 +151,43 @@
         </div>
       </section>
 
-      <section class="carousel | padding-block-700">
+      <section class="carousel | padding-block-700 text-center">
         <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
+
+        <ul class="slider">
+          <li>
+            <img src="images/avatar-anisha.png" alt="" />
+            <div class="slider-content | flow" style="--flow-spacer: 1em">
+              <h3 class="fw-bold">Anisha</h3>
+              <p data-width="wide">
+                "This has been the best experience. Ever. In the history of
+                universe."
+              </p>
+            </div>
+          </li>
+          <li>
+            <img src="images/avatar-ali.png" alt="" />
+            <div class="slider-content | flow" style="--flow-spacer: 1em">
+              <h3 class="fw-bold">Ali Bravo</h3>
+              <p data-width="wide">"We have been able to cancel everything"</p>
+            </div>
+          </li>
+          <li>
+            <img src="images/avatar-richard.png" alt="" />
+            <div class="slider-content | flow" style="--flow-spacer: 1em">
+              <h3 class="fw-bold">Rich</h3>
+              <p data-width="wide">"Good"</p>
+            </div>
+          </li>
+          <li>
+            <img src="images/avatar-shanai.png" alt="" />
+            <div class="slider-content | flow" style="--flow-spacer: 1em">
+              <h3 class="fw-bold">Shanai</h3>
+              <p data-width="wide">"Couldn't imagine my life without this."</p>
+            </div>
+          </li>
+        </ul>
+
         <button class="button">Get Started</button>
       </section>
 
