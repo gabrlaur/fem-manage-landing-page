@@ -273,36 +273,39 @@ p[data-width="wide"] {
   --logo-color: var(--clr-neutral-100);
 }
 
-.primary-footer-wrapper {
+.primary-footer__wrapper {
   display: grid;
-  gap: var(--size-900);
+  gap: var(--size-800);
+  justify-content: center;
   grid-template-areas:
     "form"
     "nav"
-    "logo-social";
+    "social"
+    "logo"
+    "copyright";
 }
 
-.primary-footer-logo-social {
-  grid-area: logo-social;
-
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: var(--size-700);
+.primary-footer__logo {
+  grid-area: logo;
 }
 
-.primary-footer-nav {
-  grid-area: nav;
-}
-
-.primary-footer-form {
+.primary-footer__form {
   grid-area: form;
-
-  display: grid;
-  align-content: space-between;
 }
 
-.primary-footer form {
+.primary-footer__copyright {
+  grid-area: copyright;
+  opacity: 0.5;
+  text-align: right;
+}
+
+.primary-footer__nav {
+  grid-area: nav;
+  margin-inline: auto;
+}
+
+.primary-footer__form {
+  grid-area: form;
   display: flex;
   gap: var(--size-200);
 }
@@ -314,21 +317,21 @@ input:where([type="text"], [type="email"]) {
 }
 
 @media (min-width: 47em) {
-  .primary-footer-wrapper {
-    grid-template-areas: "logo-social nav form";
-  }
-
-  .primary-footer-logo-social {
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: var(--size-700);
+  .primary-footer__wrapper {
+    grid-template-areas:
+      "logo nav form"
+      "social nav copyright";
+    grid-template-columns: min-content 1fr min-content;
   }
 }
 
 @media (max-width: 47em) {
-  .primary-footer-wrapper > * {
+  .primary-footer__logo {
     margin-inline: auto;
+  }
+
+  .primary-footer__copyright {
+    text-align: center;
   }
 }
 
@@ -336,7 +339,7 @@ input:where([type="text"], [type="email"]) {
 
 .footer-nav {
   columns: 2;
-  gap: clamp(var(--size-400), 5vw, var(--size-100));
+  gap: var(--size-800);
 }
 
 .footer-nav a {
@@ -353,6 +356,7 @@ input:where([type="text"], [type="email"]) {
 
 .social-list {
   display: flex;
+  justify-content: space-evenly;
   gap: var(--size-300);
 }
 
@@ -369,10 +373,11 @@ input:where([type="text"], [type="email"]) {
 @media (min-width: 47em) {
   .social-icon {
     width: var(--size-500);
+    max-width: revert;
   }
 
   .social-list {
-    gap: var(--size-500);
+    gap: var(--size-400);
   }
 }
 
@@ -568,8 +573,8 @@ input:where([type="text"], [type="email"]) {
 @media (min-width: 47em) {
   .sales-points__blob::before {
     z-index: -1;
-    left: -100%;
-    top: 10%;
+    left: -120%;
+    top: 30%;
     width: 100px;
   }
 }
